@@ -1,0 +1,148 @@
+doctype
+html
+
+  head
+    | <!--[if lt IE 7]>
+    | <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+    | <!--[if IE 7]>
+    | <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+    | <!--[if IE 8]>
+    | <html class="no-js lt-ie9" lang="en"> <![endif]-->
+    | <!--[if gt IE 8]><!-->
+    | <html class="no-js" lang="en"> <!--<![endif]-->
+    block vars
+        - var activeNav="начало"
+        - path="./"
+    meta(charset="utf-8")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width")
+    title Русский катализатор
+    base(href="test.com" target="_self")
+    //base(href="http://pepelazz.github.io/StaticSite/" target="_self")
+    block styles
+        link(href="#{path}/libs/style.css" rel="stylesheet")
+        link(href="#{path}/libs/animate.css" rel="stylesheet")
+        link(href="#{path}/index.css" rel="stylesheet")
+        link(href="#{path}/libs/normalize.css" rel="stylesheet")
+        link(href="#{path}/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="screen")
+        link(href="#{path}/libs/woothemes-FlexSlider-06b12f8/flexslider.css" rel="stylesheet" type="text/css" media="screen")
+        link(href="#{path}/libs/prettyPhoto_3.1.5/prettyPhoto.css" rel="stylesheet" type="text/css" media="screen")
+        link(href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,600italic,700,700italic,300italic" rel="stylesheet" type="text/css")
+        script(src="//api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU")
+  body
+    header
+        .container
+            .navbar
+                .navbar-inner
+                    a(href="/").brand
+                        img(src="#{path}/images/logo.png" width="90" height="90" alt="optional logo")
+                        span.logo_title
+                            strong Русский<br>катализатор
+                        span.logo_subtitle инновационные технологии
+                    a(data-toggle="collapse" data-target=".nav-collapse").btn.btn-navbar
+                        span.nb_left.pull-left
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        span.nb_right.pull-right menu
+                    .nav-collapse.collapse
+                        include ./includes/nav.jade
+
+
+    block content
+        section#slider_wrapper
+            #main_flexslider.flexslider
+                ul.slides
+                    li.item(style='background-image: url(/images/slide01.jpg);')
+                        .container
+                            .carousel-caption
+                                h1
+                                    strong Исследовательские работы
+                                    br
+                                    | в области
+                                    strong химии
+                                p.lead
+                                    strong Научные центры
+                                    | в Москве и Нижнем Новгороде
+                    li.item(style='background-image: url(/images/slide02.jpg);')
+                        .container
+                            .carousel-caption
+                                h1
+                                    strong Комплексные решения для малотоннажной химии
+                                p.lead Пилотные установки, лабораторные реактора, проектирование, монтаж
+                    li.item(style='background-image: url(/images/slide03.jpg);')
+                        .container
+                            .carousel-caption
+                                h1.inverse
+                                    strong Готовые решения для процессов гидрирования
+                                p.lead Заказной синтез. Аренда оборудования. Катализаторы для лаборатории
+            #main
+                .container
+                    section.ruscat-icons
+                        .row
+                            .span3
+                                img(src='/images/ruscat-lab.svg', alt='')
+                                div
+                                    h4 R&D
+                            .span3
+                                a(href='/articles/sintez')
+                                    img(src='/images/ruscat-cat.svg', alt='')
+                                div
+                                    h4 Заказной синтез
+                            .span3
+                                a(href='/production/VPYK')
+                                    img(src='/images/ruscat-catalyst.svg', alt='')
+                                div
+                                    h4 Катализаторы
+                            .span3
+                                a(href='/production/noatube')
+                                    img(src='/images/ruscat-tube.svg', alt='')
+                                div
+                                    h4 Оборудование
+                        .row
+      
+
+    footer
+        section#footer_teasers_wrapper
+            .container
+                .row
+                    .span4.footer_teaser
+                        h3  Центральный офис
+                        p
+                            i.icon-map-marker
+                            | г.Нижний-Новгород, пр.Гагарина 29д
+                        p
+                            i.icon-phone
+                            | +7 (831) 259 7747
+                        p
+                            i.icon-envelope
+                            | rus.catalizator@gmail.com
+                    .span4.footer_teaser
+                        h3  Московский офис
+                        p
+                            i.icon-map-marker
+                            | г.Москва, Ленинский пр-т, д.47
+                        p
+                            i.icon-phone
+                            | +7 (906) 744 4394
+                        p
+                            i.icon-envelope
+                            | rus.catalizator@gmail.com
+
+
+
+  script(src="#{path}/libs/modernizr.custom.48287.js")
+  script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
+  script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.js")
+  script(src="#{path}/libs/twitter-bootstrap/js/bootstrap.min.js" type="text/javascript")
+  script(src="#{path}/libs/woothemes-FlexSlider-06b12f8/jquery.flexslider-min.js" type="text/javascript")
+  script(src="#{path}/libs/prettyPhoto_3.1.5/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8")
+  script(src="#{path}/libs/jquery.ui.totop.js" type="text/javascript")
+  script(src="#{path}/libs/restart_theme.js" type="text/javascript")
+  script(src="#{path}/app.js")
+
+
+// build:js
+// endbuild
+
+

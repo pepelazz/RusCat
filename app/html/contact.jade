@@ -1,0 +1,10 @@
+extends index.jade
+block vars
+    - var activeNav='контакты'
+    - path="./"
+block content
+    h1 Контакты
+    div(ng-app='rus-cat-app')
+        #map(yandex-map="{lat:55.701577, lon:37.571938, adr:'г.Москва, <br> Ленинский пр-т 47'}")
+
+

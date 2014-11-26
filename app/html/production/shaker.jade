@@ -1,0 +1,55 @@
+extends ./../index.jade
+block vars
+    - var activeNav='продукция'
+    - path="./../"
+    - shortName = 'Noalab Shaker'
+    - nameRU = 'Лабораторные реакторные системы Noalab Shaker'
+    - imageLinks = ['shaker01.jpg', 'shaker02.jpg', 'shaker03.jpg', 'shaker04.jpg', 'shaker05.jpg']
+    - imageSigns = ['Прочный метал', 'Прочный метал', 'Прочный метал', 'Прочный метал']
+
+    - productDescription = "Универсальный химический реактор<br> Испытательный многоцелевой лабораторный комплекс<br> Катализаторы: Гранулы / ВПЯК  "
+
+    - productTechnical = '<table class="vpyk-table">'
+    - productTechnical += '<tr><td>Пористость, %</td><td> 80-96</td></tr>'
+    - productTechnical += '<tr><td>Плотность, г/см3</td><td> 0,3-0,5</td></tr>'
+    - productTechnical += '<tr><td>Прочность на сжатие, МПа</td><td> 0,6-1,2</td></tr></table>'
+
+    - productOther = '<div class="well">'
+    - productOther += '<p><strong>Просто</strong></p>'
+    - productOther += '<ul class="list-no-left-padding">'
+    - productOther += '<li><i class="icon-angle-right"></i>Коробочное решение: распаковали и сразу приступили к работе</li>'
+    - productOther += '<li><i class="icon-angle-right"></i>Простая пошагавшая инструкции по применению</li>'
+    - productOther += '<li><i class="icon-angle-right"></i>Простота в освоении и эксплуатации</li>'
+    - productOther += '<li><i class="icon-angle-right"></i>Интуитивно понятное управление</li>'
+    - productOther += '</ul></div><div class="well">'
+    - productOther += '<p><strong>Безопасно</strong></p>'
+    - productOther += '<ul class="list-no-left-padding">'
+    - productOther += '<li><i class="icon-angle-right"></i>Высокое значение температуры [до 300 градусов] и давления [до 150 бар]</li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>В случае нештатной ситуации исключено попадания содержимого реактора на оператора</li>  '
+    - productOther += '</ul>'
+    - productOther += '</div> '
+    - productOther += '<div class="well">'
+    - productOther += '<p><strong>Процессы</strong></p>'
+    - productOther += '<ul class="list-no-left-padding">'
+    - productOther += '<li><i class="icon-angle-right"></i>Алкилирование</li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>GTL-процессы</li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>Риформинг бензиновых фракций</li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>Риформинг </li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>Восстановление</li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>Жидкофазное гидрирование ароматических соединений</li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>Ж/ф гидрирование нитро-соединений</li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>Селективное гидрирование</li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>Органический синтез</li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>Гидрокрекинг</li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>Гидро-обессеривание</li>  '
+    - productOther += '<li><i class="icon-angle-right"></i>Обессеривание</li>  '
+    - productOther += '</ul>'
+    - productOther += '</div> '
+
+    - productNext = 'noatube-duos'
+    - productPrevious = 'dust'
+
+block content
+    include ./../includes/product.jade
+
+

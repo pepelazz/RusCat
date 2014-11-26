@@ -1,0 +1,156 @@
+extends index.jade
+block vars
+    - var activeNav='о нас'
+    - path="./"
+block content
+    #main
+        .container
+            section#about_us
+                .hgroup
+                    h1 Структура компании
+                    h2
+                        | На настощий момент компания включает в себя ряд производственных и научных подразделений, которые
+                        | расположены в различных городах (Нижний Новгрод, Москва, Киров).
+                    ul.breadcrumb.pull-right
+                        li.active Стурктура Компании
+                article
+                    .row-fluid
+                        .span6.offset3.company-scheme
+                            figure.span4
+                                i.icon-building.blue
+                            .span8
+                                h1 ЗАО "Русский Катализатор"
+                                h3 центральный офис
+                                p Нижний Новгород
+                    .row-fluid
+                        .span12
+                            .row-fluid
+                                .span5.company-scheme
+                                    figure.span4
+                                        i.icon-beaker.blue
+                                    .span8
+                                        h4 "РусКат-Москва"
+                                        ul
+                                            li
+                                                i.icon-angle-right
+                                                | научно-исследовательские проекты
+                                            li
+                                                i.icon-angle-right
+                                                | заказные синтезы
+                                            li
+                                                i.icon-angle-right
+                                                | обучение персонала
+                                            li
+                                                i.icon-angle-right
+                                                | проектирование
+                                .span5.company-scheme
+                                    figure.span4
+                                        i.icon-retweet.blue
+                                    .span8
+                                        h4 "РусКат-Ноатекс"
+                                        ul
+                                            li
+                                                i.icon-angle-right
+                                                | Лабораторные реакторные системы NoaLab
+                                                | Shaker
+                                            li
+                                                i.icon-angle-right
+                                                | Промышленные реакторные системы NoaTube
+                            .row-fluid
+                                .span5.company-scheme
+                                    figure.span4
+                                        i.icon-cogs.blue
+                                    .span8
+                                        h4 "РусКат-Урень"
+                                        p Производство
+                                        ul
+                                            li
+                                                i.icon-angle-right
+                                                | терпинеол
+                                            li
+                                                i.icon-angle-right
+                                                | канифоль
+                                            li
+                                                i.icon-angle-right
+                                                | скипидар
+                                            li
+                                                i.icon-angle-right
+                                                | жирные кислоты
+                                .span5.company-scheme
+                                    figure.span4
+                                        i.icon-filter.blue
+                                    .span8
+                                        h4 "РусКат-Киров"
+                                        p Производство
+                                        ul
+                                            li
+                                                i.icon-angle-right
+                                                | катализаторы
+                                            li
+                                                i.icon-angle-right
+                                                | фильтры
+                                            li
+                                                i.icon-angle-right
+                                                | сорбенты
+                                            li
+                                                i.icon-angle-right
+                                                | хемосорбенты
+                                            li
+                                                i.icon-angle-right
+                                                | насадки
+                    section.company-history
+                        ul.breadcrumb.pull-right
+                            li.active История Компании
+                        p
+                            strong 2004
+                            | Основание ЗАО «Русский катализатор»
+                        p
+                            strong 2006-н.в.
+                            | Комплектование и обучение собственных специалистов
+                        p
+                            strong 2008
+                            | Активное использование блочных ВПЯК в различных процессах
+                        p
+                            strong 2010
+                            | Организация опытного производства блочных ячеистых катализаторов
+                        p
+                            strong 2011
+                            | Проектирование и изготовление промышленных установок для БХК «ОРГХИМ»,
+                            | с использованием ячеистых катализаторов.
+                        p
+                            strong 2012
+                            | Выход на рынок производителей лабораторного реакторного оборудования.
+                        p
+                            strong 2013
+                            | Запуск Промышленной реакторной системы NoaTube в Урени.
+                        p
+                            strong 2014
+                            | Запуск производства Дигидротерпинеола на установке Noatube в Урени.
+                    section.company-managment
+                        ul.breadcrumb.pull-right
+                            li.active Руководство Компании
+                        .row
+                            .span3.team_member
+                                figure(style='background-image: url(/images/kuimov.jpg);')
+                                    img(src='images/radbil.jpg', alt='2a')
+                                h5 Куимов Андрей Федорович
+                                p Управляющий директор
+                                hr
+                                p rus.catalizator@gmail.com
+                            .span3.team_member
+                                figure(style='background-image: url(/images/radbil.jpg);')
+                                    img(src='images/radbil.jpg', alt='2a')
+                                h5 Радбиль Аркадий Беньюминович
+                                p Директор по развитию
+                                hr
+                                p rus.catalizator@gmail.com
+                            .span3.team_member
+                                figure(style='background-image: url(/images/ivan.jpg);')
+                                    img(src='/images/ivan.jpg', alt='3a')
+                                h5 Козлов Иван Александрович
+                                p Руководитель МРК
+                                hr
+                                p rus.catalizator@gmail.com
+
+
+

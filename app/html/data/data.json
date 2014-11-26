@@ -1,0 +1,43 @@
+{
+    "nav":[
+        ["index.html",      "начало"],
+        ["about.html",      "о нас"],
+        ["production.html", "продукция"],
+        ["articles.html",   "статьи"],
+        ["contact.html",    "контакты"]
+    ],
+    "production":[
+        {
+            "nameRu":"Блочный Высокопористый Ячеистый Катализатор",
+            "nameEng":"vpyk",
+            "img":"vpyk"
+        },
+        {
+            "nameRu":"Порошковый Углерод-Композитный Катализатор",
+            "nameEng":"dust",
+            "img":"catalyst-dust"
+        },
+        {
+            "nameRu":"Лабораторные реакторные системы Noalab Shaker",
+            "nameEng":"shaker",
+            "img":"shaker"
+        },
+        {
+            "nameRu":"Проточная установка NoaTube",
+            "nameEng":"noatube",
+            "img":"NoaTube"
+        },
+        {
+            "nameRu":"Проточная установка колонного типа NoaTube C-Type",
+            "nameEng":"noatube-c-type",
+            "img":"NoaTube-c-type"
+        },
+        {
+            "nameRu":"Установка для двухстадийных процессов NoaTube Duos",
+            "nameEng":"noatube-duos",
+            "img":"NoaTube-Duos"
+        }
+    ]
+
+}
+
