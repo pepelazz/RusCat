@@ -3,6 +3,7 @@
         ["index.html",      "начало"],
         ["about.html",      "о нас"],
         ["production.html", "продукция"],
+        ["processes.html",    "процессы"],
         ["articles.html",   "статьи"],
         ["contact.html",    "контакты"]
     ],
@@ -10,7 +11,7 @@
         {
             "nameRu":"Блочный Высокопористый Ячеистый Катализатор",
             "nameEng":"vpyk",
-            "img":"vpyk"
+            "img":"VPYK"
         },
         {
             "nameRu":"Порошковый Углерод-Композитный Катализатор",
@@ -25,17 +26,67 @@
         {
             "nameRu":"Проточная установка NoaTube",
             "nameEng":"noatube",
-            "img":"NoaTube"
+            "img":"noatube"
         },
         {
             "nameRu":"Проточная установка колонного типа NoaTube C-Type",
             "nameEng":"noatube-c-type",
-            "img":"NoaTube-c-type"
+            "img":"noatube-c-type"
         },
         {
             "nameRu":"Установка для двухстадийных процессов NoaTube Duos",
             "nameEng":"noatube-duos",
-            "img":"NoaTube-Duos"
+            "img":"noatube-duos"
+        }
+    ],
+    "processes":[
+        {
+            "name":"Органический синтез",
+            "img": "sintez"
+        },
+        {
+            "name":"Гидрирование",
+            "img": "hydrogenation"
+        },
+        {
+            "name":"Окисление",
+            "img": "oxidation"
+        },
+        {
+            "name":"Алкилирование",
+            "img": "alkylation"
+        },
+        {
+            "name":"Нитрование",
+            "img": "nitration"
+        },
+        {
+            "name":"Гидрообессеривание",
+            "img": "hydrodesulfurization"
+        },
+        {
+            "name":"Дегидратация",
+            "img": "dehydration"
+        },
+        {
+            "name":"Изомеризация",
+            "img": "isomerization"
+        },
+        {
+            "name":"Диспропорционирование",
+            "img": "disproportionating"
+        },
+        {
+            "name":"Селективное восстановление",
+            "img": "selective-recovery"
+        },
+        {
+            "name":"GTL процессы",
+            "img": "gtl-processes"
+        },
+        {
+            "name":"Риформинг",
+            "img": "reforming"
         }
     ]
 
