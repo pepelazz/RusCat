@@ -1,0 +1,38 @@
+extends ./../index.jade
+block vars
+    - var activeNav='продукция'
+    - path="./../"
+    - showCalculatorLink = true
+    - shortName = 'Порошковый катализатор'
+    - nameRU = 'Порошковый Углерод-Композитный Катализатоp'
+    - catalystType = 'dust'
+    - imageLinks = ['catalyst-dust01.jpg', 'catalyst-dust02.jpg', 'ukk-coal-diff.jpg']
+    - imageSigns = ['Гранулы любых размеров', 'Гранулы любых размеров', 'Гранулы любых размеров', 'Гранулы любых размеров']
+
+    - productDescription = "<p>Катализатор для органического синтеза, процессов жидкофазного гидрирования и "
+    - productDescription += "восстановления органических веществ – нитро соединений, альдегидов"
+    - productDescription += 'непредельных, ароматических соединений и пр.</p>'
+    - productDescription += '<p>Представляет собой микрогранулы углерод-керамического композита с нанесенным активным компонентом 0,5–10 мас. % палладия. </p>'
+    - productDescription += '<p>Высокопрочное корундовое ядро микрогранулы противодействует механическому разрушению катализатора в процессе эксплуатации. </p>'
+    - productDescription += '<p>Нанесенный слой углерода обеспечивает высокую активность и селективность катализатора.</p>'
+    
+    - productTechnical = '<table class="vpyk-table">'
+    - productTechnical += '<tr><td>Насыпная плотность, г/см3</td><td> 0,6 -0,9 </td></tr>'
+    - productTechnical += '<tr><td>Диаметр гранул, мкм</td><td>50-100, 100-150, 150-200</td></tr>'
+    - productTechnical += '<tr><td>Максимальная температура применения катализатора</td><td>450°С</td></tr></table>'
+
+    - productAdvantages = '<ul class="list-no-left-padding">'
+    - productAdvantages += '<li><i class="icon-angle-right"></i>Высокая активность и селективность </li>'
+    - productAdvantages += '<li><i class="icon-angle-right"></i>Хорошо фильтруется/ не забивает фильтр </li>'
+    - productAdvantages += '<li><i class="icon-angle-right"></i>Не загрязняет продукт</li>'
+    - productAdvantages += '<li><i class="icon-angle-right"></i>Легкость выделения продукта</li>'
+    - productAdvantages += '<li><i class="icon-angle-right"></i>Устойчив к истиранию</li>'
+    - productAdvantages += '<li><i class="icon-angle-right"></i>Регенерация катализатора промывкой</li>'
+    - productAdvantages += '<li><i class="icon-angle-right"></i>Экологически безопасен</li>'
+    - productAdvantages += '<li><i class="icon-angle-right"></i>Полная переработка после использования, без загрязнения Окружающей среды</li></ul>'
+    - productPrevious = 'VPYK'
+
+block content
+    include ./../_includes/_product-catalyst.jade
+
+

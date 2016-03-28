@@ -1,0 +1,76 @@
+#main
+    .container(ng-controller="filter")
+        section#portfolio_item
+            include ./_loader.jade
+            .hgroup
+                ul.breadcrumb.pull-left
+                    li
+                        a(href='/') Начало
+                        span.divider /
+                    li
+                        a(href='#{path}production-filters.html') Фильтры
+                        span.divider /
+                    li.active #{shortName}
+            .row
+                .span8
+                    section#portfolio_slider_wrapper
+                        #portfolio_slider.flexslider
+                            ul.slides
+                                each val, index in imageLinks
+                                    li.item(data-thumb='#{path}images/production/#{val}', style='background-image: url(#{path}images/production/#{val});')
+                                        .container
+                                            .carousel-caption
+                                                p.lead #{imageSigns[index]}
+                        #carousel.flexslider
+                            ul.slides
+                                each val, index in imageLinks
+                                    li
+                                        img(src='#{path}images/production/#{val}', alt='Керамические фильтры')
+                    .row(ng-init="nameRu='+nameRU'")
+                        .span8
+                            button(ng-click="filterOrder()").btn.btn-order Оставить заявку
+                    include ./../_includes/_order-modal.jade
+
+                .span4
+                    article.production_details
+                        .well
+                            h3 #{shortName}
+                            h4 #{nameRU}
+
+                        .well
+                            p: strong Направление
+                            ul.vpyk-technical-tags
+                                each val, index in productIndustries
+                                    li.label.label-info #{val}
+                        .well
+                            p: strong Процессы
+                            ul.list-no-left-padding
+                                each val, index in productProcesses
+                                    li
+                                        i.icon-angle-right
+                                        span #{val}
+                        .well
+                            p: strong Технические характеристики
+                            ul.list-no-left-padding
+                                |   !{productTechnical}
+                        .well
+                            p: strong Геометрические размеры
+                            p: strong Цилиндрические фильтры
+                            ul.list-no-left-padding
+                                |   !{productSizeCilinder}
+                            p: strong Прямоугольные фильтры
+                            ul.list-no-left-padding
+                                |   !{productSizeBox}
+                        .well
+                            p: strong Ячейка
+                            ul.list-no-left-padding
+                                | !{productCell}
+
+
+        ul(ng-if="!product").pager
+            if productPrevious
+                li#previous.previous
+                    a(href='#{path}production/#{productPrevious}.html') ← Предыдущий
+            if productNext
+                li#next.next
+                    a(href='#{path}production/#{productNext}.html') Следующий →

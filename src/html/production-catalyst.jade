@@ -1,0 +1,30 @@
+extends index.jade
+block vars
+    - var activeNav='продукция'
+    - path="./"
+    - showCalculatorLink = true
+    - productionCatalyst = []
+    - productionCatalyst.push({"nameRu":"Блочный Высокопористый Ячеистый Катализатор", "nameEng":"vpyk", "img":"VPYK"})
+    - productionCatalyst.push({"nameRu":"Порошковый Углерод-Композитный Катализатор", "nameEng":"dust", "img":"catalyst-dust"})
+
+block content
+    #main
+        .container
+            .hgroup
+                h1 Катализаторы
+                ul.breadcrumb.pull-right
+                    li
+                        a(href='') Начало
+                        span.divider /
+                    li.active Катализаторы
+            .row
+                each val, index in productionCatalyst
+                    .production_item.span3
+                        .production_photo(style='background-image: url(#{path}images/production/#{val.img}.png)')
+                            a(href='#{path}production/#{val.nameEng}.html')
+                        .production_description
+                            h3
+                                a(href='#{path}production/#{val.nameEng}.html') #{val.nameRu}
+
+
+

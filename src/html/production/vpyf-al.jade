@@ -1,0 +1,43 @@
+extends ./../index.jade
+block vars
+    - var activeNav='продукция'
+    - path="./../"
+    - showCalculatorLink = true
+    - shortName = 'ВПЯФ/альфа/10-30ppi (ПКФ-алюминий)'
+    - nameRU = 'Пенокерамический фильтр для фильтрации расплава алюминия'
+    - imageLinks = ['vpyf-al01.jpg', 'vpyf-al02.jpg']
+    - imageSigns = ['Эффективная фильтрация', 'Прочный', 'Многоразовый', 'Проницаемый']
+
+    - productIndustries = ['Металлургия']
+    - productProcesses = ['фильтрация расплава алюминия']
+
+    - productDescription = "Предназначен для удаления неметаллических включений, повышения однородности и прочности отливки"
+
+    - productTechnical =  '<li><i class="icon-angle-right"></i>Фильтр – блочный, стационарный</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Материал фильра – оксид алюминия</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Плотность - 0,4 г/см3</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Пористость - 80-90%</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Прочность - 1,5-2 МПа</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Рабочая температура - 1250-1400 С</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Химическая стойкость (Н+/ОН-) - 99,9%</li>'
+
+    - productSizeCilinder =  '<li>Диаметр 30~400 мм Толщина 20~100 мм</li>'
+
+    - productSizeBox =  '<li>178х178х50 (7’)</li>'
+    - productSizeBox += '<li>254х254х50 (10’)</li>'
+    - productSizeBox += '<li>305х305х50 (12’)</li>'
+    - productSizeBox += '<li>381х381х50 (15’)</li>'
+    - productSizeBox += '<li>432х432х50 (17’)</li>'
+    - productSizeBox += '<li>508х508х50 (20’)</li>'
+    - productSizeBox += '<li>584х584х50 (23’)</li>'
+
+    - productCell =  '<li>10ppi/3-5мм</li>'
+    - productCell += '<li>20ppi/1-2,5мм</li>'
+    - productCell += '<li>30ppi/0,5-1мм </li>'
+
+
+    - productPrevious = 'vpyf-iron'
+
+block content
+    include ./../_includes/_product-filter.jade
+

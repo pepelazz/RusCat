@@ -1,0 +1,202 @@
+mixin description(text)
+    div(ng-click='toggelDescription()').btn-description-toggle
+        i(class='{{iconClass}}')
+    div(ng-if='descriptIsShown').wizard-description !{text}
+
+extends index.jade
+block vars
+    //- var activeNav='контакты'
+    - path="./"
+block content
+    include ./_includes/_loader.jade
+    #main
+        .container
+            section#articles
+                .hgroup
+                    h1 Выбор катализатора
+                    ul.breadcrumb.pull-right
+                        li
+                            a(href='') Начало
+                            span.divider /
+                        li.active  Выбор катализатора
+                div(ng-controller='catalyst-choice').row
+
+                    div(ng-if="wizard.step == 'catalyst'")
+                        h3 Катализатор?
+                        ul.wisard-list
+                            li.description-toggle-directive
+                                div(ng-click="wizard.step = 'carrier'; wizard.params.catalyst='vpyk'").wizard-btn блочный
+                                +description('стационарный гетерогенный катализатор в виде проницаемого керамического блока для жидкофазного или газофазного процессов')
+                            //li.description-toggle-directive
+                                div(ng-click="wizard.step = 'carrier'; wizard.params.catalyst='dust'").wizard-btn порошковый
+                                +description('гетерогенный катализатор в виде микрогранул из керамического композитного материала для жидкофазного процесса')
+
+                    div(ng-if="wizard.step == 'carrier' && wizard.params.catalyst == 'vpyk'")
+                        h3 Носитель?
+                        .nav-arrows
+                            i(ng-click="wizard.step = 'catalyst'; wizard.params.catalyst=null").icon-circle-arrow-left
+                        ul.wisard-list
+                            li.description-toggle-directive
+                                div(ng-click="wizard.gotoSize('gm')").wizard-btn гамма
+                                +description('Гамма оксид алюминия (ɤ-Al<sub>2</sub>O<sub>3</sub>) используется для развития/увеличения удельной поверхности. Слабокислая поверхность/носитель. Размер и форма микропор регулируется.')
+                            li.description-toggle-directive
+                                div(ng-click="wizard.gotoSize('zr')").wizard-btn циркон
+                                +description('Нанесенный  сульфатированный диоксид циркония (ZrO<sub>2</sub>) используется для модифицирования поверхности и придания сверхкислых свойств носителю.')
+                            li.description-toggle-directive
+                                div(ng-click="wizard.gotoSize('cb')").wizard-btn карбон
+                                +description('Нанесенный углерод используется для существенного увеличения поверхности и придания ярковыраженных основных свойств носителю.')
+                            //li.description-toggle-directive
+                            //    div(ng-click="wizard.gotoSize('tz')").wizard-btn цеолит
+                            //    +description('Нанесенный цеолит марки ZSM-5,10 используется для придания специфических свойств носителю, таких как высокая селективность/избирательность.')
+                    div(ng-if="wizard.step == 'carrier' && wizard.params.catalyst == 'dust'")
+                        h3 Носитель?
+                        .nav-arrows
+                            i(ng-click="wizard.step = 'catalyst'; wizard.params.catalyst=null").icon-circle-arrow-left
+                        ul.wisard-list
+                            li.description-toggle-directive
+                                div(ng-click="wizard.gotoSize('gm')").wizard-btn гамма
+                                +description('гамма керамический композит - (ɤ-Al<sub>2</sub>O<sub>3</sub>) используется для развития/увеличения удельной поверхности. Слабокислая поверхность/носитель.')
+                            li.description-toggle-directive
+                                div(ng-click="wizard.gotoSize('zr')").wizard-btn циркон
+                                +description('ЦКК - кирконий керамический композит - диоксид циркония (ZrO<sub>2</sub>) используется для модифицирования поверхности и придания сверхкислых свойств носителю.')
+                            li.description-toggle-directive
+                                div(ng-click="wizard.gotoSize('cb')").wizard-btn карбон
+                                +description('УКК углерод керамический композит - используется для существенного увеличения поверхности и придания ярковыраженных основных свойств носителю')
+
+                    div(ng-if="wizard.step == 'size'")
+                        h3 Размер?
+                        .nav-arrows
+                            i(ng-click="wizard.step = 'carrier'; wizard.params.carrier=null").icon-circle-arrow-left
+                        ul.wisard-list
+                            li.description-toggle-directive
+                                div(ng-click="wizard.step = 'size-2x'").wizard-btn цилиндрическая форма
+                                +description('цилиндрическая форма катализатора подходит для проточных реакторов, а так же для емкостных, при условии использования специальной  мешалки с корзиной.')
+                                img(src='./images/wizard/cilinder.png').img-size
+                            li.description-toggle-directive
+                                div(ng-click="wizard.step = 'size-3x'").wizard-btn прямоугольная форма
+                                +description('прямоугольная  и сегментированная форма катализатора подходит для прямоугольных реакторов и  реакторов с диаметром свыше 300мм.')
+                                img(src='./images/wizard/cube.png').img-size
+
+                    div(ng-if="wizard.step == 'size-2x'")
+                        h3 Размер?
+                        .nav-arrows
+                            i(ng-click="wizard.step = 'size'; wizard.params.size=null").icon-circle-arrow-left
+                        ul.wisard-list
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[20, 20]").wizard-btn 20x20мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[20, 20]").wizard-btn  20x20мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[30, 30]").wizard-btn  30x30мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[30, 50]").wizard-btn  30x50мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[50, 25]").wizard-btn  50x25мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[50, 50]").wizard-btn  50x50мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[50, 100]").wizard-btn  50x100мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[100, 50]").wizard-btn  100x50мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[100, 100]").wizard-btn  100x100мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[150, 100]").wizard-btn  150x100мм
+
+                    div(ng-if="wizard.step == 'size-3x'")
+                        h3 Размер?
+                        .nav-arrows
+                            i(ng-click="wizard.step = 'size'; wizard.params.size=null").icon-circle-arrow-left
+                        ul.wisard-list
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[20, 20, 20]").wizard-btn 20x20х20мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[30, 30, 20]").wizard-btn 30x30х20мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[30, 40, 420]").wizard-btn 30x40х420мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[75, 50, 20]").wizard-btn 75x50х20мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[75, 75, 20]").wizard-btn 75x75х20мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[100, 50, 20]").wizard-btn 100x50х20мм
+                            li: div(ng-click="wizard.step = 'cell'; wizard.params.size=[100, 100, 20]").wizard-btn 100x100х20мм
+
+                    div(ng-if="wizard.step == 'cell'")
+                        h3 Ячейка?
+                        .nav-arrows
+                            i(ng-click="wizard.gotoBackFromCell()").icon-circle-arrow-left
+                        ul.wisard-list
+                            li.description-toggle-directive
+                                div(ng-click="wizard.step = 'metal'; wizard.params.cell='0'").wizard-btn 10ppi - 3-5мм
+                                +description('подходит для жидкофазных процессов')
+                            li.description-toggle-directive
+                                div(ng-click="wizard.step = 'metal'; wizard.params.cell='1'").wizard-btn 20ppi - 1-2,5мм
+                                +description('подходит как жидкофазных так и газофазных процессов')
+                            li.description-toggle-directive
+                                div(ng-click="wizard.step = 'metal'; wizard.params.cell='2'").wizard-btn 30ppi - 0,5-1мм
+                                +description('подходит для газофазных процессов.')
+
+                    div(ng-if="wizard.step == 'dispersion'")
+                        h3 Дисперсность?
+                        .nav-arrows
+                            i(ng-click="wizard.step = 'carrier'; wizard.params.carrier=null").icon-circle-arrow-left
+                        p.wizard-quest-teaser
+                            |дисперсность порошка - узкая фракция с близкими по размеру/диаметру частицами. Указывается интервал,
+                            |в котором находятся значения размеров частиц.
+                        ul.wisard-list
+                            li: div(ng-click="wizard.step = 'metal'; wizard.params.dispersion=[50, 100]").wizard-btn 50-100 мкм
+                            li: div(ng-click="wizard.step = 'metal'; wizard.params.dispersion=[50, 100]").wizard-btn  100-150 мкм
+                            li: div(ng-click="wizard.step = 'metal'; wizard.params.dispersion=[50, 100]").wizard-btn  150-200 мкм
+                            li: div(ng-click="wizard.step = 'metal'; wizard.params.dispersion=[50, 100]").wizard-btn  500-1000 мкм
+                            li: div(ng-click="wizard.step = 'metal'; wizard.params.dispersion=[1000, 2000]").wizard-btn  1-2 мм
+                            li: div(ng-click="wizard.step = 'metal'; wizard.params.dispersion=[2000, 5000]").wizard-btn  2-5 мм
+
+                    div(ng-if="wizard.step == 'metal'")
+                        h3 Металл?
+                        .nav-arrows
+                            i(ng-click="wizard.gotoBackFromMetal()").icon-circle-arrow-left
+                        p.wizard-quest-teaser
+                            |активный металл определяет тип катализируемой реакции: гидрирование, окисление, изомеризация,
+                            |дегидрирование, диспропорционирование и пр.
+                        ul.wisard-list
+                            //li: div(ng-if="wizard.params.catalyst == 'vpyk'" ng-click="wizard.params.metal.name = 'Ni'; wizard.step = 'metalNumbers'").wizard-btn Ni
+                            li: div(ng-click="wizard.params.metal.name = 'Pd'; wizard.step = 'metalNumbers'").wizard-btn Pd
+                            //li: div(ng-click="wizard.params.metal.name = 'Pt'; wizard.step = 'metalNumbers'").wizard-btn Pt
+
+                    div(ng-if="wizard.step == 'metalNumbers' || wizard.step == 'final'")
+                        h3 Металл?
+                        .nav-arrows
+                            i(ng-click="wizard.step = 'metal'; wizard.params.metal=null").icon-circle-arrow-left
+                        ul(ng-if="wizard.params.metal.name == 'Ni'").wisard-list
+                            li: div(ng-click="wizard.params.metal.number='5'; wizard.step = 'final'").wizard-btn  5%
+                            li: div(ng-click="wizard.params.metal.number='10'; wizard.step = 'final'").wizard-btn  10%
+                            li: div(ng-click="wizard.params.metal.number='15'; wizard.step = 'final'").wizard-btn  15%
+                            li: div(ng-click="wizard.params.metal.number='20'; wizard.step = 'final'").wizard-btn  20%
+                        ul(ng-if="(wizard.params.metal.name == 'Pd' || wizard.params.metal.name == 'Pt') && wizard.params.catalyst=='vpyk'").wisard-list
+                            li: div(ng-click="wizard.params.metal.number='0.2'; wizard.step = 'final'").wizard-btn 0.2%
+                            li: div(ng-click="wizard.params.metal.number='0.5'; wizard.step = 'final'").wizard-btn 0.5%
+                            li: div(ng-click="wizard.params.metal.number='1'; wizard.step = 'final'").wizard-btn 1%
+                            li: div(ng-click="wizard.params.metal.number='1.5'; wizard.step = 'final'").wizard-btn 1.5%
+                            li: div(ng-click="wizard.params.metal.number='2'; wizard.step = 'final'").wizard-btn 2%
+                            li: div(ng-click="wizard.params.metal.number='2.5'; wizard.step = 'final'").wizard-btn 2.5%
+                            li: div(ng-click="wizard.params.metal.number='3'; wizard.step = 'final'").wizard-btn 3%
+                            li: div(ng-click="wizard.params.metal.number='3.5'; wizard.step = 'final'").wizard-btn 3.5%
+                            li: div(ng-click="wizard.params.metal.number='4'; wizard.step = 'final'").wizard-btn 4%
+                            li: div(ng-click="wizard.params.metal.number='4.5'; wizard.step = 'final'").wizard-btn 4.5%
+                            li: div(ng-click="wizard.params.metal.number='5'; wizard.step = 'final'").wizard-btn  5%
+                        ul(ng-if="(wizard.params.metal.name == 'Pd' || wizard.params.metal.name == 'Pt') && wizard.params.catalyst=='dust'").wisard-list
+                            li: div(ng-click="wizard.params.metal.number='0.5'; wizard.step = 'package'").wizard-btn 0.5%
+                            li: div(ng-click="wizard.params.metal.number='1'; wizard.step = 'package'").wizard-btn  1%
+                            li: div(ng-click="wizard.params.metal.number='5'; wizard.step = 'package'").wizard-btn  5%
+                            li: div(ng-click="wizard.params.metal.number='10'; wizard.step = 'package'").wizard-btn  10%
+
+                    div(ng-if="(wizard.step == 'package' || wizard.step == 'final') && wizard.params.catalyst=='dust'")
+                        h3 Упаковка?
+                        .nav-arrows
+                            i(ng-click="wizard.step = 'metalNumbers'; wizard.params.metal.number=null").icon-circle-arrow-left
+                        p.wizard-quest-teaser порошковый катализатор упаковывается в индивидуальный пакет с бескислородной средой.
+                        ul.wisard-list
+                            li: div(ng-click="wizard.params.package = '1'; wizard.step = 'final'").wizard-btn 1г
+                            li: div(ng-click="wizard.params.package = '5'; wizard.step = 'final'").wizard-btn 5г
+                            li: div(ng-click="wizard.params.package = '10'; wizard.step = 'final'").wizard-btn 10г
+                            li: div(ng-click="wizard.params.package = '25'; wizard.step = 'final'").wizard-btn 25г
+                            li: div(ng-click="wizard.params.package = '50'; wizard.step = 'final'").wizard-btn 50г
+                            li: div(ng-click="wizard.params.package = '100'; wizard.step = 'final'").wizard-btn 100г
+                            li: div(ng-click="wizard.params.package = '500'; wizard.step = 'final'").wizard-btn 500г
+                            li: div(ng-click="wizard.params.package = '1000'; wizard.step = 'final'").wizard-btn 1000г
+
+                    //div(ng-if="wizard.step == 'final'")
+                    //    h3 Выбор сделан. (открывается карточка выбранного катализатора)
+                    //    .nav-arrows
+                    //        i(ng-click="wizard.goBackFromFinal()").icon-circle-arrow-left
+
+
+
+
+
+

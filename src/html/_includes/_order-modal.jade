@@ -1,0 +1,11 @@
+#modal(ng-class='{show : modaIsShown}')
+    .name
+        input(placeholder='Имя' ng-model='request.name')
+    .phone
+        input(placeholder='Телефон' ng-model='request.phone')
+    .email
+        input(placeholder='Email' ng-model='request.email')
+    .message
+        textarea(placeholder='Детали', rows='5', ng-model='request.message')
+    .btn(ng-click='request.send()') Отправить
+    .close(ng-click='modaIsShown=false') X

@@ -1,0 +1,45 @@
+extends ./../index.jade
+block vars
+    - var activeNav='продукция'
+    - path="./../"
+    - showCalculatorLink = true
+    - shortName = 'ВПЯФ/кремний/10-30ppi (ПКФ-чугун)'
+    - nameRU = 'Пенокерамический фильтр для фильтрации расплава чугуна '
+    - imageLinks = ['vpyf-iron01.jpg', 'vpyf-iron02.jpg']
+    - imageSigns = ['Эффективная фильтрация', 'Прочный', 'Многоразовый', 'Проницаемый']
+
+    - productIndustries = ['Металлургия']
+    - productProcesses = ['фильтрация расплава чугуна', 'фильтрация расплава меди']
+
+    - productDescription = "Предназначен для удаления неметаллических включений, повышения однородности и прочности отливки"
+
+    - productTechnical =  '<li><i class="icon-angle-right"></i>Фильтр – блочный, стационарный</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Материал фильра – карбид кремния</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Плотность - 0,4-0,5 г/см3</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Пористость - 70-85%</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Прочность - 1,5-2,5 МПа</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Рабочая температура - 1450-1550 С</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Химическая стойкость (Н+/ОН-) - 99,9%</li>'
+
+    - productSizeCilinder =  '<li>Диаметр 30~400 мм Толщина 20~100 мм</li>'
+
+    - productSizeBox =  '<li>40х50х20~30 мм</li>'
+    - productSizeBox += '<li>40х40х20~30 мм </li>'
+    - productSizeBox += '<li>50х50х20~30 мм </li>'
+    - productSizeBox += '<li>75х50х20~30 мм </li>'
+    - productSizeBox += '<li>100х75х20~50 мм </li>'
+    - productSizeBox += '<li>100х100х20~50 мм </li>'
+    - productSizeBox += '<li>150х100х20~50 мм </li>'
+    - productSizeBox += '<li>150х150х20~50 мм </li>'
+    - productSizeBox += '<li>200х200х40-50 мм </li>'
+
+    - productCell =  '<li>10ppi/3-5мм</li>'
+    - productCell += '<li>20ppi/1-2,5мм</li>'
+    - productCell += '<li>30ppi/0,5-1мм </li>'
+
+
+    - productNext = 'vpyf-al'
+
+block content
+    include ./../_includes/_product-filter.jade
+

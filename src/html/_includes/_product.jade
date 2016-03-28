@@ -1,0 +1,73 @@
+#main
+    .container
+        section#portfolio_item
+            .hgroup
+                ul.breadcrumb.pull-left
+                    li
+                        a(href='/') Начало
+                        span.divider /
+                    li
+                        a(href='#{path}production.html') Продукция
+                        span.divider /
+                    li.active #{shortName}
+            .row
+                .span6
+                    section#portfolio_slider_wrapper
+                        #portfolio_slider.flexslider
+                            ul.slides
+                                each val, index in imageLinks
+                                    li.item(data-thumb='#{path}images/production/#{val}', style='background-image: url(#{path}images/production/#{val});')
+                                        .container
+                                            .carousel-caption
+                                                p.lead #{imageSigns[index]}
+                        #carousel.flexslider
+                            ul.slides
+                                each val, index in imageLinks
+                                    li
+                                        img(src='#{path}images/production/#{val}', alt='Катализаторы')
+                    if shortName=='ВПЯК'
+                        include ./../_includes/_vpykTable.jade
+                        img(src='./../images/production/vpyk-classified.png' alt='Таблица классификации катализаторов')
+                    if shortName=='Noalab Shaker'
+                        .video-container
+                            iframe(width='1280', height='720', src='//www.youtube.com/embed/C7OtLIbOwXM?showinfo=0', frameborder='0', allowfullscreen='allowfullscreen')
+                .span6
+                    article.production_details
+                        .well
+                            h3 #{nameRU}
+                            h4 #{nameRUsmall}
+                        if industry
+                            .well
+                                strong Направление
+                                ul
+                                    each val in industry
+                                        li.label.label-info #{val}
+                        if productDescription
+                            .well
+                                p
+                                    strong Описание
+                                |   !{productDescription}
+                        if productTechnical
+                            .well
+                                p
+                                    strong Технические характеристики
+                                | !{productTechnical}
+                        if productUsage
+                            .well
+                                p
+                                    strong Применение
+                                | !{productUsage}
+                        if productAdvantages
+                            .well
+                                p
+                                    strong Преимущества
+                                | !{productAdvantages}
+                        if productOther
+                            | !{productOther}
+        ul.pager
+            if productPrevious
+                li#previous.previous
+                    a(href='#{path}production/#{productPrevious}.html') ← Предыдущий
+            if productNext
+                li#next.next
+                    a(href='#{path}production/#{productNext}.html') Следующий →

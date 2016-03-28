@@ -1,0 +1,41 @@
+extends ./../index.jade
+block vars
+    - var activeNav='продукция'
+    - path="./../"
+    - showCalculatorLink = true
+    - shortName = 'ВПЯК/гамма/Pt/30ppi'
+    - nameRU = 'катализатор беспламенного дожигания бытового газа'
+    - var imageLinks = ['vpyk-burn-gas01.jpg', 'vpyk-burn-gas02.jpg']
+    - var imageSigns = ['Эффективная фильтрация', 'Прочный', 'Многоразовый', 'Проницаемый']
+
+    - productIndustries = ['Промышленная взрывобезопасность', 'Гражданская взрывобезопасность']
+    - productProcesses = ['каталитическое беспламенное дожигание метана', 'каталитическое беспламенное дожигание природного газа', 'каталитическое беспламенное дожигание ']
+
+    - productDescription = "Катализатор – блочный, стационарный <br> Носитель/активная подложка – гамма оксид алюминия"
+
+    - productTechnical =  '<li><i class="icon-angle-right"></i>Плотность - 0,4 г/см3</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Активная поверхность – 150-200 м2/г</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Пористость - 80-90%</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Прочность - 1,5-2,5 МПа</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Рабочая температура - 20~1250 С</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Химическая стойкость (Н+/ОН-) - 99,9%</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Количество регенераций – от 50 циклов</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Ресурс от 5000ч</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Активный Металл – Pt/платина</li>'
+    - productTechnical += '<li><i class="icon-angle-right"></i>Содержание активного металла – 0,2~1,0 мас %</li>'
+
+    - productSizeCilinder =  '<li>Диаметр 50~400мм Толщина 20~150мм</li>'
+
+    - productSizeBox =  '<li>50~400 х 50~400 х 20~50 мм</li>'
+
+    - productCell =  '<li>10ppi/3-5мм</li>'
+    - productCell += '<li>20ppi/1-2,5мм</li>'
+    - productCell += '<li>30ppi/0,5-1мм </li>'
+
+
+    - productPrevious = 'vpyk-burn-hydrogen'
+
+block content
+    include ./../_includes/_product-catalyst-burn.jade
+
+

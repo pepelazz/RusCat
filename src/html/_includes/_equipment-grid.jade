@@ -1,0 +1,13 @@
+.row.equipment-grid
+    h1 Оборудование для данного катализатора
+    .span2.equipment-item
+        a(href='/production/shaker.html')
+            img(src='#{path}images/production/shaker.png' alt='Оборудование для катализа')
+    if catalystType == 'vpyk'
+        .span2.equipment-item
+            a(href='/production/noatube.html')
+                img(src='#{path}images/production/noatube.png' alt='Оборудование для катализа')
+        .span2.equipment-item
+            a(href='/production/noatube-duos.html')
+                img(src='#{path}images/production/noatube-duos.png' alt='Оборудование для катализа')
+

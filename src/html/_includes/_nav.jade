@@ -1,0 +1,14 @@
+ul.nav.pull-right#main-menu
+    li(class= 'начало' == activeNav ? 'active' : ''): a(href='/index.html') начало
+    li(class= 'о нас' == activeNav ? 'active' : ''): a(href='/about.html') о нас
+    li(class= 'продукция' == activeNav ? 'active' : '').dropdown
+        a(href='#' data-toggle="dropdown").dropdown-toggle продукция<span class="caret"></span>
+        ul.dropdown-menu
+            li: a(href='/production-catalyst.html') катализаторы
+            li: a(href='/production-catalyst-burn.html') катализаторы горения
+            li: a(href='http://wastenoa.ru' target='_blank') катализаторы для газоочистки
+            li: a(href='/production-filters.html') фильтры
+            li: a(href='/production-equipment.html') оборудование
+    li(class= 'аутсорсинг' == activeNav ? 'active' : ''): a(href='/outsourcing.html') аутсорсинг
+    li(class= 'контакты' == activeNav ? 'active' : ''): a(href='/contact.html') контакты
+

@@ -1,0 +1,40 @@
+extends ./../index.jade
+block vars
+    - var activeNav='продукция'
+    - path="./../"
+    - showCalculatorLink = true
+    - shortName = 'NoaTube Duos'
+    - nameRU = 'Проточная установка для двухстадийных процессов NoaTube Duos'
+    - imageLinks = ['noatube-duos01.jpg', 'noatube-duos02.jpg', 'noatube-duo.jpg']
+    - imageSigns = ['Прочный металл', 'Прочный металл', 'Прочный металл', 'Прочный металл']
+
+    - productDescription = "Катализаторы: Гранулы / ВПЯК<br>Режим работы: Периодический / непрерывный"
+
+    - productOther = '<div class="well">'
+    - productOther += '<p><strong>Технические характеристики</strong></p>'
+    - productOther +=     '<ul class="list-no-left-padding">'
+    - productOther +=         '<li><i class="icon-angle-right"></i>Vк.з. = 1 / 2 / 4 / 6 л</li>  '
+    - productOther +=         '<li><i class="icon-angle-right"></i>Т = - 60..+ 350 °С</li>  '
+    - productOther +=         '<li><i class="icon-angle-right"></i>P = -1...50 атм</li>  '
+    - productOther +=         '<li><i class="icon-angle-right"></i>Нержавеющая сталь</li>  '
+    - productOther +=         '</ul>'
+    - productOther += '</div> '
+    - productOther += '<div class="well">'
+    - productOther +=     '<p><strong>Процессы:</strong></p>'
+    - productOther +=     '<ul class="list-no-left-padding">'
+    - productOther +=         '<li><i class="icon-angle-right"></i>Органический синтез</li>  '
+    - productOther +=         '<li><i class="icon-angle-right"></i>Гидрирование</li>  '
+    - productOther +=         '<li><i class="icon-angle-right"></i>Окисление</li>  '
+    - productOther +=         '<li><i class="icon-angle-right"></i>Алкилирование</li>  '
+    - productOther +=         '<li><i class="icon-angle-right"></i>Нитрование</li>  '
+    - productOther +=         '<li><i class="icon-angle-right"></i>Гидрообессеривание</li>  '
+    - productOther +=         '</ul>'
+    - productOther += '</div> '
+
+    - productPrevious = 'shaker'
+
+block content
+    include ./../_includes/_product-equipment.jade
+
+
+

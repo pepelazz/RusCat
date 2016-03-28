@@ -1,0 +1,45 @@
+extends index.jade
+block vars
+    - var activeNav='аутсорсинг'
+    - path="./"
+    - showCalculatorLink = true
+block content
+    #main
+        .container
+            .hgroup
+                h1 Аутсорсинг
+                ul.breadcrumb.pull-right
+                    li
+                        a(href='') Начало
+                        span.divider /
+                    li.active Аутсорсинг
+            .row
+                .span9
+                    .row
+                        .production_item.span3
+                            .production_photo(style='background-image: url(#{path}images/production/outsourcing-sintez.svg)')
+                                a(href='')
+                            .production_description
+                                h3
+                                    a(href='#{path}production/shaker.html') Заказной синтез
+                        .production_item.span3
+                            .production_photo(style='background-image: url(#{path}images/production/outsourcing-h2.svg)')
+                                a(href='')
+                            .production_description
+                                h3
+                                    a(href='#{path}production/shaker.html') Гидрирование под заказ
+                        .production_item.span3
+                            .production_photo(style='background-image: url(#{path}images/production/outsourcing-rent.svg)')
+                                a(href='')
+                            .production_description
+                                h3
+                                    a(href='#{path}production/shaker.html') Аренда реакторов
+
+                .span3
+                    .well
+                        p Компания «Русский катализатор» предлагает профессиональные услуги для Вашего бизнеса. Наша задача – это увеличение доходов Вашей компании.
+                        p Русский катализатор  – Ваш аутсорсинг-партнёр.
+                        p Наша специализация – аутсорсинг непрофильных функций.
+                        p Мы действительно можем избавить своих клиентов от побочных и сложных процессов, не связанных с их основным бизнесом.
+                        p Предоставляя услуги, мы обеспечиваем качественное решение.
+                        p Для любого нашего клиента, главное преимущество работы с аутсорсинг-партнёром – возможность полной концентрации на основном бизнесе.

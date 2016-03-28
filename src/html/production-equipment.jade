@@ -1,0 +1,32 @@
+extends index.jade
+block vars
+    - var activeNav='продукция'
+    - path="./"
+    - showCalculatorLink = true
+    - productionEquipment = []
+    - productionEquipment.push({"nameRu":"Лабораторные реакторные системы Noalab Shaker", "nameEng":"shaker", "img":"shaker"})
+    - productionEquipment.push({"nameRu":"Проточная установка NoaTube", "nameEng":"noatube", "img":"noatube"})
+    - productionEquipment.push({"nameRu":"Проточная установка колонного типа NoaTube C-Type", "nameEng":"noatube-c-type", "img":"noatube-c-type"})
+    - productionEquipment.push({"nameRu":"Установка для двухстадийных процессов NoaTube Duos", "nameEng":"noatube-duos", "img":"noatube-duos"})
+
+block content
+    #main
+        .container
+            .hgroup
+                h1 Оборудование
+                ul.breadcrumb.pull-right
+                    li
+                        a(href='') Начало
+                        span.divider /
+                    li.active Катализаторы
+            .row
+                each val, index in productionEquipment
+                    .production_item.span3
+                        .production_photo(style='background-image: url(#{path}images/production/#{val.img}.png)')
+                            a(href='#{path}production/#{val.nameEng}.html')
+                        .production_description
+                            h3
+                                a(href='#{path}production/#{val.nameEng}.html') #{val.nameRu}
+
+
+

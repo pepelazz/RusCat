@@ -1,0 +1,30 @@
+extends index.jade
+block vars
+    - var activeNav='продукция'
+    - path="./"
+    - showCalculatorLink = true
+    - productionCatalystBurn = []
+    - productionCatalystBurn.push({"nameRu":"Катализатор беспламенного дожигания водорода", "nameEng":"vpyk-burn-hydrogen", "img":"vpyk-burn-hydrogen"})
+    - productionCatalystBurn.push({"nameRu":"Катализатор беспламенного дожигания бытового газа", "nameEng":"vpyk-burn-gas", "img":"vpyk-burn-gas"})
+
+block content
+    #main
+        .container
+            .hgroup
+                h1 Катализаторы беспламенного горения
+                ul.breadcrumb.pull-right
+                    li
+                        a(href='') Начало
+                        span.divider /
+                    li.active Катализаторы
+            .row
+                each val, index in productionCatalystBurn
+                    .production_item.span3
+                        .production_photo(style='background-image: url(#{path}images/production/#{val.img}.jpg)')
+                            a(href='#{path}production/#{val.nameEng}.html')
+                        .production_description
+                            h3
+                                a(href='#{path}production/#{val.nameEng}.html') #{val.nameRu}
+
+
+

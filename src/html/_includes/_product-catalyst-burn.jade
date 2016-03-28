@@ -1,0 +1,81 @@
+block vars
+#main
+    .container(ng-controller="catalyst")
+        section#portfolio_item
+            include ./_loader.jade
+            .hgroup
+                ul.breadcrumb.pull-left
+                    li
+                        a(href='/') Начало
+                        span.divider /
+                    li
+                        a(href='#{path}production-catalyst-burn.html') Катализаторы
+                        span.divider /
+                    li.active #{shortName}
+            .row
+                .span6
+                    section#portfolio_slider_wrapper
+                        #portfolio_slider.flexslider
+                            ul.slides
+                                each val, index in imageLinks
+                                    li.item(data-thumb='#{path}images/production/#{val}', style='background-image: url(#{path}images/production/#{val});')
+                                        .container
+                                            .carousel-caption
+                                                p.lead #{imageSigns[index]}
+                        #carousel.flexslider
+                            ul.slides
+                                each val, index in imageLinks
+                                    li
+                                        img(src='#{path}images/production/#{val}', alt='Катализатор беспламенного горения')
+
+                .span6
+                    article.production_details
+                        .well(ng-if='!product')
+                            h3 #{shortName}
+                            h3 #{nameRU}
+                        .well(ng-if='product')
+                            h3(ng-bind='product.title')
+                            h4(ng-bind='product.subtitle')
+
+                        .well(ng-if="product.industries")
+                            p: strong Направление
+                            ul.vpyk-technical-tags
+                                li(ng-repeat="industry in product.industries" ng-bind="industry").label.label-info
+                        .well(ng-if="product.processes")
+                            p: strong Процессы
+                            ul.list-no-left-padding
+                                li(ng-repeat="process in product.processes")
+                                    i.icon-angle-right
+                                    span(ng-bind="process")
+
+                        if productDescription
+                            .well
+                                p: strong Описание
+                                |   !{productDescription}
+                        if productTechnical
+                            .well
+                                p: strong Технические характеристики
+                                ul.list-no-left-padding
+                                    | !{productTechnical}
+                        .well
+                            p: strong Геометрические размеры
+                            p: strong Цилиндрические фильтры
+                            ul.list-no-left-padding
+                                | !{productSizeCilinder}
+                            p: strong Прямоугольные фильтры
+                            ul.list-no-left-padding
+                                | !{productSizeBox}
+                        .well
+                            p: strong Ячейка
+                            ul.list-no-left-padding
+                                | !{productCell}
+
+        if productOther
+                            | !{productOther}
+        ul(ng-if="!product").pager
+            if productPrevious
+                li#previous.previous
+                    a(href='#{path}production/#{productPrevious}.html') ← Предыдущий
+            if productNext
+                li#next.next
+                    a(href='#{path}production/#{productNext}.html') Следующий →

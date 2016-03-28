@@ -1,0 +1,18 @@
+extends index.jade
+block vars
+    - var activeNav='контакты'
+    - path="./"
+    - showCalculatorLink = true
+block content
+    .contact
+        h1 Контакты
+        p
+            i.icon-phone
+            | +7 (495) 729 2902
+        p
+            i.icon-envelope
+            a(href='mailto: rc@noateq.ru') rc@noateq.ru
+    div
+        #map(yandex-map="{lat:55.701577, lon:37.571938, adr:'г.Москва, <br> Ленинский пр-т 47'}")
+
+

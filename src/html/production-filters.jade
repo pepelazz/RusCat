@@ -1,0 +1,30 @@
+extends index.jade
+block vars
+    - var activeNav='продукция'
+    - path="./"
+    - showCalculatorLink = true
+    - productionFilter = []
+    - productionFilter.push({"nameRu":"Фильтр для фильтрации расплава чугуна", "nameEng":"vpyf-iron", "img":"vpyf-iron"})
+    - productionFilter.push({"nameRu":"Фильтр для фильтрации расплава алюминия", "nameEng":"vpyf-al", "img":"vpyf-al"})
+
+block content
+    #main
+        .container
+            .hgroup
+                h1 Фильтры
+                ul.breadcrumb.pull-right
+                    li
+                        a(href='') Начало
+                        span.divider /
+                    li.active Фильтры
+            .row
+                each val, index in productionFilter
+                    .production_item.span3
+                        .production_photo(style='background-image: url(#{path}images/production/#{val.img}.jpg)')
+                            a(href='#{path}production/#{val.nameEng}.html')
+                        .production_description
+                            h3
+                                a(href='#{path}production/#{val.nameEng}.html') #{val.nameRu}
+
+
+

@@ -1,0 +1,45 @@
+{
+
+
+
+    "productionEquipment":[
+        {
+            "nameRu":"Лабораторные реакторные системы Noalab Shaker",
+            "nameEng":"shaker",
+            "img":"shaker"
+        },
+        {
+            "nameRu":"Проточная установка NoaTube",
+            "nameEng":"noatube",
+            "img":"noatube"
+        },
+        {
+            "nameRu":"Проточная установка колонного типа NoaTube C-Type",
+            "nameEng":"noatube-c-type",
+            "img":"noatube-c-type"
+        },
+        {
+            "nameRu":"Установка для двухстадийных процессов NoaTube Duos",
+            "nameEng":"noatube-duos",
+            "img":"noatube-duos"
+        }
+    ],
+
+    "productionFiltr":[
+        {
+            "nameRu":"Фильтр для фильтрации расплава чугуна",
+            "nameEng":"vpyf-iron",
+            "img":"vpyf-iron"
+        },
+        {
+            "nameRu":"Фильтр для фильтрации расплава алюминия",
+            "nameEng":"vpyf-al",
+            "img":"vpyf-al"
+        }
+    ]
+
+
+
+
+}
+

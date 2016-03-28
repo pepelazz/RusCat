@@ -1,0 +1,26 @@
+extends index.jade
+block vars
+    - var activeNav='статьи'
+    - path="./"
+    - showCalculatorLink = true
+block content
+    #main
+        .container
+            section#articles
+                .hgroup
+                    h1 Статьи
+                    ul.breadcrumb.pull-right
+                        li
+                            a(href='') Начало
+                            span.divider /
+                        li.active Статьи
+                article
+                    .row-fluid
+                        .span12
+                            ul.list-unstyled
+                                li
+                                    a(href='./articles/01-sintez.html')
+                                        h3 Заказной органический синтез и омологация.
+
+
+
